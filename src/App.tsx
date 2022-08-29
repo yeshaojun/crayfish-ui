@@ -1,12 +1,9 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import React from "react";
+import { Button } from "./components/Button/button";
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
@@ -18,6 +15,10 @@ function App() {
         >
           Learn React
         </a>
+        <Button btnType="primary">hello</Button>
+        <Button>hi</Button>
+        <Button disabled>hi niyao</Button>
+        <Button btnType="link">hi niyao</Button>
       </header>
     </div>
   );
