@@ -1,0 +1,40 @@
+.alert {
+  box-sizing: border-box;
+  margin: 0;
+  color: #000000d9;
+  font-size: $small-font-size;
+  font-variant: tabular-nums;
+  line-height: $line-height-base;
+  list-style: none;
+  font-feature-settings: "tnum";
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: $alert-padding-y $alert-padding-x;
+  word-wrap: break-word;
+  border-radius: $border-radius;
+  display: flex;
+  align-items: flex-start;
+  .alert-content {
+    flex: 1;
+  }
+  .alert-description {
+    font-size: $small-font-size;
+  }
+  .alert-close-icon {
+    cursor: pointer;
+  }
+}
+
+.alert-success {
+  @include alert-style($success);
+}
+.alert-info {
+  @include alert-style($info);
+}
+.alert-warn {
+  @include alert-style($warning);
+}
+.alert-error {
+  @include alert-style($danger);
+}

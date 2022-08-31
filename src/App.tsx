@@ -1,5 +1,6 @@
 import React from "react";
 import { Button } from "./components/Button/button";
+import { Alert } from "./components/Alert/alert";
 function App() {
   return (
     <div className="App">
@@ -19,6 +20,12 @@ function App() {
         <Button>hi</Button>
         <Button disabled>hi niyao</Button>
         <Button btnType="link">hi niyao</Button>
+
+        <Alert
+          message={"nihaoya"}
+          type="info"
+          description="nisdhgsduioghsdoighdsoighjid你和弟哦；老师的结果；是搭建了广阔"
+        ></Alert>
       </header>
     </div>
   );
