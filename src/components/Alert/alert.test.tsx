@@ -12,7 +12,6 @@ describe("render alert component", () => {
     const element = wrapper.getByText("nihao");
     expect(element).toBeInTheDocument();
     expect(wrapper.container.tagName).toEqual("DIV");
-    // console.log(wrapper.container.children[0]);
     expect(wrapper.container.children[0]).toHaveClass("alert alert-success");
   });
 
