@@ -1,6 +1,8 @@
 import React from "react";
 import { Button } from "./components/Button/button";
 import { Alert } from "./components/Alert/alert";
+import { Menu } from "./components/Menu/menu";
+import { MenuItem } from "./components/Menu/menuItem";
 function App() {
   return (
     <div className="App">
@@ -25,6 +27,12 @@ function App() {
           message={"nihaoya"}
           description="nisdhgsduioghsdoighdsoighjid你和弟哦；老师的结果；是搭建了广阔"
         ></Alert>
+
+        <Menu>
+          <MenuItem>1</MenuItem>
+          <MenuItem>2</MenuItem>
+          <MenuItem>3</MenuItem>
+        </Menu>
       </header>
     </div>
   );
