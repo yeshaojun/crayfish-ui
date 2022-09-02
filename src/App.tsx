@@ -23,7 +23,6 @@ function App() {
 
         <Alert
           message={"nihaoya"}
-          type="info"
           description="nisdhgsduioghsdoighdsoighjid你和弟哦；老师的结果；是搭建了广阔"
         ></Alert>
       </header>
