@@ -2,7 +2,7 @@ import { FC, ReactNode, useState } from "react";
 import classNames from "classnames";
 export type AlertType = "success" | "info" | "warn" | "error";
 
-interface AlertProps {
+export interface AlertProps {
   className?: string;
   closeable?: Boolean; // 是否显示close
   message: String;

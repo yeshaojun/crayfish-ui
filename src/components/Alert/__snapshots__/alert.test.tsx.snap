@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render alert component support closeIcon 1`] = `
+<div>
+  <div
+    class="alert alert-warn"
+  >
+    <div
+      class="alert-content"
+    >
+      <div
+        class="alert-content-message"
+      >
+        Warning Text Warning Text Warning TextW arning Text Warning Text Warning TextWarning Text
+      </div>
+      <div
+        class="alert-description"
+      />
+    </div>
+    <div
+      class="alert-close-icon"
+    >
+      关闭
+    </div>
+  </div>
+</div>
+`;

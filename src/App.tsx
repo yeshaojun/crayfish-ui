@@ -1,13 +1,13 @@
 import React from "react";
 import { Button } from "./components/Button/button";
 import { Alert } from "./components/Alert/alert";
+import { Menu } from "./components/Menu/menu";
+import { MenuItem } from "./components/Menu/menuItem";
+import { SubMenu } from "./components/Menu/subMenu";
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
         <a
           className="App-link"
           href="https://reactjs.org"
@@ -23,9 +23,19 @@ function App() {
 
         <Alert
           message={"nihaoya"}
-          type="info"
           description="nisdhgsduioghsdoighdsoighjid你和弟哦；老师的结果；是搭建了广阔"
         ></Alert>
+
+        <Menu defaultIndex="1">
+          <MenuItem>1</MenuItem>
+          <MenuItem disabled>2</MenuItem>
+          <MenuItem>3</MenuItem>
+          <SubMenu title="4">
+            <MenuItem>4.1</MenuItem>
+            <MenuItem>4.2</MenuItem>
+            <MenuItem>4.3</MenuItem>
+          </SubMenu>
+        </Menu>
       </header>
     </div>
   );
