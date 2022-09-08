@@ -4,6 +4,9 @@ import { Alert } from "./components/Alert/alert";
 import { Menu } from "./components/Menu/menu";
 import { MenuItem } from "./components/Menu/menuItem";
 import { SubMenu } from "./components/Menu/subMenu";
+import { Tabs } from "./components/Tabs/tabs";
+import { TabPane } from "./components/Tabs/tabPane";
+import { spawn } from "child_process";
 function App() {
   return (
     <div className="App">
@@ -36,6 +39,21 @@ function App() {
             <MenuItem>4.3</MenuItem>
           </SubMenu>
         </Menu>
+
+        <Tabs
+          active="0"
+          tabBarExtraContent={{
+            left: <span>left</span>,
+            right: <Button>hi</Button>,
+          }}
+          mode="vertical"
+        >
+          <TabPane tab="tab1">content test1</TabPane>
+          <TabPane tab="tab2">content test2</TabPane>
+          <TabPane tab="tab3" disabled>
+            content test3
+          </TabPane>
+        </Tabs>
       </header>
     </div>
   );

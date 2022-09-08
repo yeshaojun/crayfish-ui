@@ -1,5 +1,10 @@
 import React from "react";
-import { fireEvent, render, RenderResult } from "@testing-library/react";
+import {
+  fireEvent,
+  render,
+  RenderResult,
+  waitFor,
+} from "@testing-library/react";
 import { Menu, MenuProps } from "./menu";
 import { MenuItem } from "./menuItem";
 import { SubMenu } from "./subMenu";
@@ -65,6 +70,21 @@ describe("test menu an menuItem compoent", () => {
     expect(disabledElement).not.toHaveClass("is-active");
     expect(testProps.onSelect).not.toHaveBeenCalledWith("1");
   });
+
+  it("should show fropdown items when hover on subMenu", async () => {
+    expect(wrapper.queryByText("drop1")).toBeNull();
+    const dropdownElement = wrapper.getByText("dropdown");
+    fireEvent.mouseEnter(dropdownElement);
+    await waitFor(() => {
+      expect(wrapper.queryByText("drop1")).toBeVisible();
+    });
+    fireEvent.click(wrapper.getByText("drop1"));
+    expect(testProps.onSelect).toHaveBeenCalledWith("3-0");
+    fireEvent.mouseLeave(dropdownElement);
+    await waitFor(() => {
+      expect(wrapper.queryByText("drop1")).toBeNull();
+    });
+  });
 });
 
 describe("test menu and menuItem component in vertical mode", () => {
@@ -77,11 +97,10 @@ describe("test menu and menuItem component in vertical mode", () => {
   });
 
   it("should dropdown", () => {
-    let dropDownItem = wrapper2.queryByText("drop1");
-    expect(dropDownItem).toBeNull();
+    expect(wrapper2.queryByText("drop1")).toBeNull();
 
     fireEvent.click(wrapper2.getByText("dropdown"));
-    dropDownItem = wrapper2.queryByText("drop1");
+    const dropDownItem = wrapper2.queryByText("drop1");
     expect(dropDownItem).toBeVisible();
   });
 

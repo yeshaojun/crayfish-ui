@@ -218,6 +218,16 @@ $btn-border-radius-sm: $border-radius-sm !default;
 $btn-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
   border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out !default;
 
+// tabs
+$tabs-border-width: $border-width * 2 !default;
+$tabs-border-color: $border-color !default;
+$tabs-transition: width 0.15s ease-in-out, left 0.15s ease-in-out,
+  right 0.15s ease-in-out !default;
+
+$tabs-item-padding-y: 0.5rem !default;
+$tabs-item-padding-x: 0.3rem !default;
+$tabs-item-margin-x: 0.5rem !default;
+
 // menu
 $menu-border-width: $border-width !default;
 $menu-border-color: $border-color !default;
