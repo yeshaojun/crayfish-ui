@@ -46,6 +46,7 @@ function App() {
             left: <span>left</span>,
             right: <Button>hi</Button>,
           }}
+          mode="vertical"
         >
           <TabPane tab="tab1">content test1</TabPane>
           <TabPane tab="tab2">content test2</TabPane>

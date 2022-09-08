@@ -1,4 +1,9 @@
-import { fireEvent, render, RenderResult } from "@testing-library/react";
+import {
+  fireEvent,
+  render,
+  RenderResult,
+  cleanup,
+} from "@testing-library/react";
 import { wrap } from "module";
 import React from "react";
 import { TabPane } from "./tabPane";
@@ -42,6 +47,7 @@ const defaultProps: TabsProps = {
 };
 
 let wrapper: RenderResult;
+let wrapper2: RenderResult;
 let tabsElement: HTMLElement;
 
 describe("shoud tabs tabpane component test", () => {
@@ -74,5 +80,18 @@ describe("shoud tabs tabpane component test", () => {
 
     expect(wrapper.getByText("content2")).not.toHaveClass("is-active");
     expect(wrapper.getByText("content1")).toHaveClass("is-active");
+  });
+
+  it("should rende tabs in vertical", () => {
+    cleanup();
+    wrapper2 = render(
+      generateTabs({
+        ...defaultProps,
+        mode: "vertical",
+      })
+    );
+    const ele2 = wrapper2.getByTestId("test-tabs");
+    expect(wrapper2.container).toBeInTheDocument();
+    expect(ele2).toHaveClass("crayfish-tabs tabs-vertical");
   });
 });

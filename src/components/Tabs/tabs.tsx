@@ -42,6 +42,8 @@ export const Tabs: React.FC<TabsProps> = (props) => {
 
   const [w, setW] = useState("");
   const [l, setL] = useState("");
+  const [t, setT] = useState("");
+  const [h, setH] = useState("");
 
   const linkDom = useRef<HTMLUListElement>(null);
 
@@ -101,11 +103,23 @@ export const Tabs: React.FC<TabsProps> = (props) => {
 
   useEffect(() => {
     if (linkDom.current) {
-      setL(
-        (linkDom.current.children[Number(currentActive)] as HTMLLIElement)
-          .offsetLeft + "px"
-      );
-      setW(linkDom.current.children[Number(currentActive)].clientWidth + "px");
+      if (mode === "horizontal") {
+        setL(
+          (linkDom.current.children[Number(currentActive)] as HTMLLIElement)
+            .offsetLeft + "px"
+        );
+        setW(
+          linkDom.current.children[Number(currentActive)].clientWidth + "px"
+        );
+      } else {
+        setT(
+          (linkDom.current.children[Number(currentActive)] as HTMLLIElement)
+            .offsetTop + "px"
+        );
+        setH(
+          linkDom.current.children[Number(currentActive)].clientHeight + "px"
+        );
+      }
     }
   }, [currentActive]);
 
@@ -121,6 +135,8 @@ export const Tabs: React.FC<TabsProps> = (props) => {
               style={{
                 width: w,
                 left: l,
+                height: h,
+                top: t,
               }}
             ></div>
           </div>
