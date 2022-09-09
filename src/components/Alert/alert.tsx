@@ -1,5 +1,7 @@
 import { FC, ReactNode, useState } from "react";
 import classNames from "classnames";
+import { Icon } from "../Icon/icon";
+import Transition from "../Transition/transition";
 export type AlertType = "success" | "info" | "warn" | "error";
 
 export interface AlertProps {
@@ -48,10 +50,8 @@ export const Alert: FC<AlertProps> = (props) => {
     afterClose && afterClose();
   };
 
-  // 这里应当加入动画
-  // antd使用CSSMotion方式，rc-motion库
-  if (!closed) {
-    return (
+  return (
+    <Transition in={!closed} timeout={300} animation="zoom-in-top">
       <div className={classes} {...restProps}>
         {renderIcon()}
         <div className="alert-content">
@@ -59,13 +59,11 @@ export const Alert: FC<AlertProps> = (props) => {
           <div className="alert-description">{description}</div>
         </div>
         <div className="alert-close-icon" onClick={close}>
-          关闭
+          <Icon icon="close"></Icon>
         </div>
       </div>
-    );
-  } else {
-    return null;
-  }
+    </Transition>
+  );
 };
 
 Alert.defaultProps = {

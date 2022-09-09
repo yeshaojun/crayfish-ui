@@ -5,7 +5,6 @@ import { MenuItemProps } from "./menuItem";
 import Transition from "../Transition/transition";
 
 import { Icon } from "../Icon/icon";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export interface SubMenuProps {
   index?: string;

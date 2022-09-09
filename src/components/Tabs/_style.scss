@@ -66,11 +66,7 @@
   }
   .crayfish-tabs-content {
     .tabs-tab {
-      display: none;
       padding: 10px;
-      &.is-active {
-        display: block;
-      }
     }
   }
 }

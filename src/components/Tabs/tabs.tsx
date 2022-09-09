@@ -2,7 +2,7 @@ import React, { createContext, useState, useEffect, useRef } from "react";
 import classNames from "classnames";
 import { TabPaneProps } from "./tabPane";
 
-type MenuMode = "horizontal" | "vertical";
+export type MenuMode = "horizontal" | "vertical";
 export interface TabsProps {
   className?: string;
   active?: string;
@@ -92,6 +92,7 @@ export const Tabs: React.FC<TabsProps> = (props) => {
       if (ele.type.displayName === "TabPane") {
         return React.cloneElement(ele, {
           index: index.toString(),
+          mode,
         });
       } else {
         console.error(
