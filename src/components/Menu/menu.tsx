@@ -6,7 +6,7 @@ type MenuMode = "horizontal" | "vertical";
 export interface MenuProps {
   defaultIndex?: string;
   mode?: MenuMode;
-  className?: String;
+  className?: string;
   style?: CSSProperties;
   onSelect?: (selectIndex: string) => void;
   children?: React.ReactNode;

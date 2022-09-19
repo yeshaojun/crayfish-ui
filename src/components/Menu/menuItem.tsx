@@ -3,9 +3,9 @@ import classNames from "classnames";
 import { MenuContext } from "./menu";
 
 export interface MenuItemProps {
-  index?: String;
+  index?: string;
   disabled?: Boolean;
-  className?: String;
+  className?: string;
   style?: React.CSSProperties;
   children?: React.ReactNode;
 }
