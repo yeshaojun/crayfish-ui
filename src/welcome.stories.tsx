@@ -6,12 +6,10 @@ storiesOf("Intro", module).add(
   () => {
     return (
       <>
-        <h1>欢迎来到 vikingship 组件库</h1>
-        <p>
-          vikingship 是为慕课网课程打造的一套教学组件库，从零到一让大家去学习
-        </p>
+        <h1>欢迎来到 crayfish 组件库</h1>
+        <p>crayfish 是一套仿antd的组建库,</p>
         <h3>安装试试</h3>
-        <code>npm install vikingship --save</code>
+        <code>npm install crayfish-ui --save</code>
       </>
     );
   },

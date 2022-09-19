@@ -6,10 +6,14 @@ export type ButtonType = "primary" | "default" | "danger" | "link";
 
 interface BaseButtonProps {
   className?: string;
+  /**设置 Button 的禁用 */
   disabled?: boolean;
+  /**设置 Button 的尺寸 */
   size?: ButtonSize;
+  /**设置 Button 的类型 */
   btnType: ButtonType;
   children?: React.ReactNode;
+  /**当btnType为link时设置 */
   href?: string;
 }
 
@@ -18,7 +22,11 @@ type AnchorButtonProps = BaseButtonProps & AnchorHTMLAttributes<HTMLElement>;
 
 export type ButtonProps = Partial<NativeButtonProps & AnchorButtonProps>;
 
-const Button: FC<ButtonProps> = (props) => {
+/**
+ * ### 引用方法
+ * import { Button } from 'crayfish-ui'
+ */
+export const Button: FC<ButtonProps> = (props) => {
   const { className, disabled, size, btnType, children, href, ...restProps } =
     props;
   const classes = classNames("btn", className, {

@@ -6,17 +6,27 @@ export type AlertType = "success" | "info" | "warn" | "error";
 
 export interface AlertProps {
   className?: string;
-  closeable?: Boolean; // 是否显示close
+  /**是否显示close按钮 */
+  closeable?: Boolean;
+  /**显示标题 */
   message: String;
+  /**alert的类型 */
   type?: AlertType;
+  /**显示内容 */
   description?: string;
+  /**是否自定义标题icon */
   showIcon?: Boolean;
-  closeText?: string;
+  /**自定义icon */
   icon?: ReactNode;
+  /**关闭事件回调 */
   afterClose?: () => void;
 }
 
-const Alert: FC<AlertProps> = (props) => {
+/**
+ * ### 引用方法
+ * import { Alert } from 'crayfish-ui'
+ */
+export const Alert: FC<AlertProps> = (props) => {
   const {
     closeable,
     message,
@@ -24,7 +34,6 @@ const Alert: FC<AlertProps> = (props) => {
     description,
     className,
     showIcon,
-    closeText,
     icon,
     afterClose,
     ...restProps
@@ -39,8 +48,6 @@ const Alert: FC<AlertProps> = (props) => {
     if (showIcon) {
       if (icon) {
         return icon;
-      } else {
-        return type;
       }
     }
   };
@@ -58,9 +65,11 @@ const Alert: FC<AlertProps> = (props) => {
           <div className="alert-content-message">{message}</div>
           <div className="alert-description">{description}</div>
         </div>
-        <div className="alert-close-icon" onClick={close}>
-          <Icon icon="close"></Icon>
-        </div>
+        {closeable ? (
+          <div className="alert-close-icon" onClick={close}>
+            <Icon icon="close" theme="primary"></Icon>
+          </div>
+        ) : null}
       </div>
     </Transition>
   );
