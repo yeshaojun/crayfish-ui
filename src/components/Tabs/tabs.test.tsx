@@ -1,13 +1,12 @@
+import React from "react";
 import {
   fireEvent,
   render,
   RenderResult,
   cleanup,
 } from "@testing-library/react";
-import { wrap } from "module";
-import React from "react";
-import { TabPane } from "./tabPane";
-import { Tabs, TabsProps } from "./tabs";
+import TabPane from "./tabPane";
+import Tabs, { TabsProps } from "./tabs";
 
 const createStyleFile = () => {
   const cssFile: string = `

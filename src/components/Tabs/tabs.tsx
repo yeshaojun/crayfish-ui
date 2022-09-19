@@ -67,7 +67,7 @@ const Tabs: React.FC<TabsProps> = (props) => {
           <li
             key={index}
             className={classNames({
-              ["is-disabled"]: ele.props.disabled,
+              "is-disabled": ele.props.disabled,
             })}
             onClick={() => {
               if (!ele.props.disabled) {
@@ -122,7 +122,7 @@ const Tabs: React.FC<TabsProps> = (props) => {
         );
       }
     }
-  }, [currentActive]);
+  }, [currentActive, mode]);
 
   return (
     <TabsContext.Provider value={passedContext}>

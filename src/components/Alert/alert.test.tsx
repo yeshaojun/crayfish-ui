@@ -1,6 +1,6 @@
 import React from "react";
 import { render, fireEvent } from "@testing-library/react";
-import { Alert, AlertProps } from "./alert";
+import Alert, { AlertProps } from "./alert";
 
 const defaultProps: AlertProps = {
   message: "nihao",
