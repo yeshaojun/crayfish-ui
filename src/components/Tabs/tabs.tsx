@@ -22,7 +22,7 @@ interface ITabsContext {
 
 export const TabsContext = createContext<ITabsContext>({ active: "0" });
 
-export const Tabs: React.FC<TabsProps> = (props) => {
+const Tabs: React.FC<TabsProps> = (props) => {
   const {
     className,
     active,
@@ -153,3 +153,5 @@ Tabs.defaultProps = {
   mode: "horizontal",
   active: "0",
 };
+
+export default Tabs;

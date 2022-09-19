@@ -18,7 +18,7 @@ type AnchorButtonProps = BaseButtonProps & AnchorHTMLAttributes<HTMLElement>;
 
 export type ButtonProps = Partial<NativeButtonProps & AnchorButtonProps>;
 
-export const Button: FC<ButtonProps> = (props) => {
+const Button: FC<ButtonProps> = (props) => {
   const { className, disabled, size, btnType, children, href, ...restProps } =
     props;
   const classes = classNames("btn", className, {
@@ -46,3 +46,5 @@ Button.defaultProps = {
   disabled: false,
   btnType: "default",
 };
+
+export default Button;

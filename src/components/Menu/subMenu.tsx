@@ -4,7 +4,7 @@ import { MenuContext } from "./menu";
 import { MenuItemProps } from "./menuItem";
 import Transition from "../Transition/transition";
 
-import { Icon } from "../Icon/icon";
+import Icon from "../Icon/icon";
 
 export interface SubMenuProps {
   index?: string;
@@ -13,7 +13,7 @@ export interface SubMenuProps {
   children?: React.ReactNode;
 }
 
-export const SubMenu: React.FC<SubMenuProps> = (props) => {
+const SubMenu: React.FC<SubMenuProps> = (props) => {
   const { index, title, className, children } = props;
   const context = useContext(MenuContext);
   const openedSubMenus = context.defaultOpenSubMenus as Array<string>;
@@ -95,3 +95,5 @@ export const SubMenu: React.FC<SubMenuProps> = (props) => {
 };
 
 SubMenu.displayName = "SubMenu";
+
+export default SubMenu;

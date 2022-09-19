@@ -11,7 +11,7 @@ export interface TabPaneProps {
   mode?: MenuMode;
 }
 
-export const TabPane: React.FC<TabPaneProps> = (props) => {
+const TabPane: React.FC<TabPaneProps> = (props) => {
   const { index, children, mode } = props;
   const context = useContext(TabsContext);
   const classes = classNames("tabs-tab", {
@@ -29,3 +29,5 @@ export const TabPane: React.FC<TabPaneProps> = (props) => {
 };
 
 TabPane.displayName = "TabPane";
+
+export default TabPane;

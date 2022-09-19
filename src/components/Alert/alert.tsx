@@ -1,6 +1,6 @@
 import { FC, ReactNode, useState } from "react";
 import classNames from "classnames";
-import { Icon } from "../Icon/icon";
+import Icon from "../Icon/icon";
 import Transition from "../Transition/transition";
 export type AlertType = "success" | "info" | "warn" | "error";
 
@@ -16,7 +16,7 @@ export interface AlertProps {
   afterClose?: () => void;
 }
 
-export const Alert: FC<AlertProps> = (props) => {
+const Alert: FC<AlertProps> = (props) => {
   const {
     closeable,
     message,
@@ -71,3 +71,5 @@ Alert.defaultProps = {
   showIcon: false,
   type: "success",
 };
+
+export default Alert;
