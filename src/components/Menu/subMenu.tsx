@@ -7,13 +7,15 @@ import Transition from "../Transition/transition";
 import Icon from "../Icon/icon";
 
 export interface SubMenuProps {
+  // 如果模式为vertical， 则展开
   index?: string;
+  // 标题
   title: string;
   className?: string;
   children?: React.ReactNode;
 }
 
-const SubMenu: React.FC<SubMenuProps> = (props) => {
+export const SubMenu: React.FC<SubMenuProps> = (props) => {
   const { index, title, className, children } = props;
   const context = useContext(MenuContext);
   const openedSubMenus = context.defaultOpenSubMenus as Array<string>;

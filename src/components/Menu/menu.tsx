@@ -1,16 +1,25 @@
-import React, { createContext, CSSProperties, useState } from "react";
+import React, {
+  createContext,
+  CSSProperties,
+  useState,
+  ProviderProps,
+} from "react";
 import classNames from "classnames";
 import { MenuItemProps } from "./menuItem";
 
 type MenuMode = "horizontal" | "vertical";
 export interface MenuProps {
+  /**默认 active 的菜单项的索引值 */
   defaultIndex?: string;
+  /**菜单类型 横向或者纵向 */
   mode?: MenuMode;
   className?: string;
   style?: CSSProperties;
+  /**点击菜单项触发的回掉函数 */
   onSelect?: (selectIndex: string) => void;
+  /** menuItem */
   children?: React.ReactNode;
-  // 只在vertical模式生效
+  /** 设置子菜单的默认打开 只在纵向模式下生效 */
   defaultOpenSubMenus?: string[];
 }
 
@@ -23,7 +32,10 @@ interface IMenuContext {
 
 export const MenuContext = createContext<IMenuContext>({ index: "0" });
 
-const Menu: React.FC<MenuProps> = (props) => {
+/**
+ * import { Menu } from 'crayfish-ui'
+ */
+export const Menu: React.FC<MenuProps> = (props) => {
   const {
     children,
     className,

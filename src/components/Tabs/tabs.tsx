@@ -5,12 +5,15 @@ import { TabPaneProps } from "./tabPane";
 export type MenuMode = "horizontal" | "vertical";
 export interface TabsProps {
   className?: string;
+  /**选中tabs */
   active?: string;
+  /**tabs栏扩展 */
   tabBarExtraContent?: {
     left?: React.ReactNode;
     right?: React.ReactNode;
   };
   onChange?: (activeIndex: string) => void;
+  /**设置横向模式/纵向模式 */
   mode?: MenuMode;
   children?: React.ReactNode;
 }
@@ -22,7 +25,10 @@ interface ITabsContext {
 
 export const TabsContext = createContext<ITabsContext>({ active: "0" });
 
-const Tabs: React.FC<TabsProps> = (props) => {
+/**
+ * import { Tabs } from 'crayfish-ui'
+ */
+export const Tabs: React.FC<TabsProps> = (props) => {
   const {
     className,
     active,
