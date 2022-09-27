@@ -32,7 +32,7 @@ export const Input: FC<InputProps> = (props) => {
   const cnames = classNames("crayfish-input-wrapper", {
     [`input-size-${size}`]: size,
     "is-disabled": disabled,
-    "input-froup": prepend || append,
+    "input-group": prepend || append,
     "input-group-append": !!append,
     "input-group-prepend": !!prepend,
   });
@@ -55,3 +55,5 @@ export const Input: FC<InputProps> = (props) => {
     </div>
   );
 };
+
+export default Input;
